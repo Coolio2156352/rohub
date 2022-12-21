@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function ProjectBox({ img, title, text, action}) {
+export default function ProjectBox(props) {
   return (
     <Wrapper>
-      <ImgBtn className="aniamate pointer" onClick={action ? () => action() : null}>
-        <img className="radius8" src={img} alt="project"></img>
+      <ImgBtn className="aniamate pointer " data-modal-toggle={props.data_modal}>
+        <img className="radius8" src={props.img} alt="project"></img>
       </ImgBtn>
-      <h3 className="font20 extraBold">{title}</h3>
-      <p className="font13">{text}</p>
+      <h3 className="font20 extraBold">{props.title}</h3>
+      <p className="font13">{props.text}</p>
     </Wrapper>
   );
 }

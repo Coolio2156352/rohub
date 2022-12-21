@@ -11,6 +11,7 @@ import ProjectImg4 from "../../assets/img/projects/4.png";
 import ProjectImg5 from "../../assets/img/projects/5.png";
 import ProjectImg6 from "../../assets/img/projects/6.png";
 import AddImage2 from "../../assets/img/add/add2.png";
+import Grafik1 from '../Elements/Grafik1'
 import {Link} from "react-scroll"
 
 export default function Projects() {
@@ -19,7 +20,7 @@ export default function Projects() {
       <div className="whiteBg">
         <div className="container">
           <HeaderInfo>
-            <h1 className="font40 extraBold">Analisis Berdasarkan Grafik</h1>
+            <h1 className="font40 extraBold">Analisis Berdasarkan Grafik📈</h1>
             <p className="font13">
               Berdasarkan data Perpustakaan di San Fransico yang bersumber dari <a className="semiBold font15 purpleColor"  href="https://www.kaggle.com/datasets/datasf/sf-library-usage-data">Kaggle</a>.
               <br />
@@ -31,9 +32,10 @@ export default function Projects() {
               <ProjectBox
                 img={ProjectImg1}
                 title="Kategori Pelanggan Pustaka berdasarkan jumlah buku yang dipinjam"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                action={() => alert("clicked")}
+                text="Berdasarkan data yang ada, perlunya edukasi lebih dalam lagi tentang minat baca ke segala umur terutama kategori juvenile yaitu kategori remaja karena literasi itu sangatlah penting untuk para remaja saat dalam proses masa pertumbuhannya."
+                data_modal="staticModal1"
               />
+                <Grafik1 chartID="grafik1" data_modal="staticModal1"/>          
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
@@ -109,7 +111,16 @@ export default function Projects() {
     </Wrapper>
   );
 }
+const svg_attr = styled.svg`
+clip-rule: evenodd;
+fill-rule: evenodd;
+`;
 
+
+const tabindex = styled.div`
+tabindex:-1;
+
+`;
 const Wrapper = styled.section`
   width: 100%;
 `;
