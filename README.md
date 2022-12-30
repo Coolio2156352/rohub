@@ -2,6 +2,8 @@
 
 ## Interface <br/>
 
+<img src="https://raw.githubusercontent.com/rizkynat/GoLibrary/master/src/assets/img/projects/web_1.png"><br />
+<img src="https://raw.githubusercontent.com/rizkynat/GoLibrary/master/src/assets/img/projects/web_2.png"><br />
 
 ## 5 visualization for fransisco's library 
 
