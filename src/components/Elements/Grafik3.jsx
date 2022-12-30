@@ -6,56 +6,56 @@ import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 import Highcharts from 'highcharts';
 import HighchartsReact from "highcharts-react-official";
 
-
 const options = {
-    chart: {
-        renderTo: 'container2',
-        type: 'column',
-        options3d: {
-          enabled: true,
-          alpha: 15,
-          beta: 15,
-          depth: 50,
-          viewDistance: 25
-        }
-      },
-      xAxis: {
-        categories: ['Adult', 'Senior', 'Juvenile', 'Young Adult', 'Staff', 'Special', 'Retired Staff', 'Teacher Card', 'Guest'],
-        title: {
-            text: 'Rentang Umur'
-        }
-      },
-      yAxis: {
-        min: 0,
-        title: {
-            text: 'Total Checkout',
-            align: 'high'
-        },
-        labels: {
-            overflow: 'justify'
-        }
+  chart: {
+      renderTo: 'container2',
+      type: 'column',
+      options3d: {
+        enabled: true,
+        alpha: 15,
+        beta: 15,
+        depth: 50,
+        viewDistance: 25
+      }
     },
-      tooltip: {
-        headerFormat: '<b>{point.key}</b><br>',
-        pointFormat: 'Jumlah buku: {point.y}'
-      },
+    xAxis: {
+      categories: ['Main Library', 'Chinathown', 'Richmond', 'Ortega', 'Sunset', 'Mission', 'West Portal', 'Excelsior', 'Parkside', 'Portola'],
       title: {
-        text: 'Jumlah buku yang dipinjam berdasarkan kategori customer'
+          text: 'Rentang Umur'
+      }
+    },
+    yAxis: {
+      min: 0,
+      title: {
+          text: 'Total Checkout',
+          align: 'high'
       },
-      legend: {
-        enabled: false
-      },
-      plotOptions: {
-        column: {
-          depth: 25
-        }
-      },
-      series: [{
-        data: [37260254, 12710879, 10190792, 6846985, 774349, 303145, 159409, 136360, 54158],
-        colorByPoint: true
-      }]
+      labels: {
+          overflow: 'justify'
+      }
+  },
+    tooltip: {
+      headerFormat: '<b>{point.key}</b><br>',
+      pointFormat: 'Jumlah buku: {point.y}'
+    },
+    title: {
+      text: 'Banyak Jumlah buku yang dipinjam berdasarkan lokasi'
+    },
+    legend: {
+      enabled: false
+    },
+    plotOptions: {
+      column: {
+        depth: 25
+      }
+    },
+    series: [{
+      data: [13644899, 5745218, 4894128, 4015150, 3392047, 3280190, 2939750, 2676300, 2102529, 2038223],
+      colorByPoint: true
+    }]
 };
-function Grafik1(props) {
+
+function Grafik3(props) {
   //const chart = useRef(null);
   const chartID = props.chartID;
   const data_modal = props.data_modal;
@@ -65,7 +65,7 @@ function Grafik1(props) {
   useLayoutEffect(() => {
     //var root = am5.Root.new("chartdiv2");
     var root = am5.Root.new(chartID);
-    
+
 
     
       
@@ -108,4 +108,4 @@ const tabindex = styled.div`
 tabindex:-1;
 
 `;
-export default Grafik1;
+export default Grafik3;

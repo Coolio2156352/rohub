@@ -3,59 +3,11 @@ import React, { useLayoutEffect } from "react";
 import styled from "styled-components";
 import * as am5 from "@amcharts/amcharts5";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
-import Highcharts from 'highcharts';
-import HighchartsReact from "highcharts-react-official";
 
+//chart type
+import * as am5percent from "@amcharts/amcharts5/percent";
 
-const options = {
-    chart: {
-        renderTo: 'container2',
-        type: 'column',
-        options3d: {
-          enabled: true,
-          alpha: 15,
-          beta: 15,
-          depth: 50,
-          viewDistance: 25
-        }
-      },
-      xAxis: {
-        categories: ['Adult', 'Senior', 'Juvenile', 'Young Adult', 'Staff', 'Special', 'Retired Staff', 'Teacher Card', 'Guest'],
-        title: {
-            text: 'Rentang Umur'
-        }
-      },
-      yAxis: {
-        min: 0,
-        title: {
-            text: 'Total Checkout',
-            align: 'high'
-        },
-        labels: {
-            overflow: 'justify'
-        }
-    },
-      tooltip: {
-        headerFormat: '<b>{point.key}</b><br>',
-        pointFormat: 'Jumlah buku: {point.y}'
-      },
-      title: {
-        text: 'Jumlah buku yang dipinjam berdasarkan kategori customer'
-      },
-      legend: {
-        enabled: false
-      },
-      plotOptions: {
-        column: {
-          depth: 25
-        }
-      },
-      series: [{
-        data: [37260254, 12710879, 10190792, 6846985, 774349, 303145, 159409, 136360, 54158],
-        colorByPoint: true
-      }]
-};
-function Grafik1(props) {
+function Grafik5(props) {
   //const chart = useRef(null);
   const chartID = props.chartID;
   const data_modal = props.data_modal;
@@ -65,11 +17,56 @@ function Grafik1(props) {
   useLayoutEffect(() => {
     //var root = am5.Root.new("chartdiv2");
     var root = am5.Root.new(chartID);
-    
 
-    
-      
-      }, [chartID]);
+    // Set themes
+    // https://www.amcharts.com/docs/v5/concepts/themes/
+    root.setThemes([am5themes_Animated.new(root)]);
+
+    // Create chart
+    // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/
+    var chart = root.container.children.push(
+      am5percent.PieChart.new(root, {
+        endAngle: 270
+      })
+    );
+
+    // Create series
+    // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Series
+    var series = chart.series.push(
+      am5percent.PieSeries.new(root, {
+        valueField: "value",
+        categoryField: "category",
+        endAngle: 270
+      })
+    );
+
+    series.states.create("hidden", {
+      endAngle: -90
+    });
+
+    //dataset
+    let data = [
+      {
+        category: "65 - 74  tahun",
+        value: 8879072
+      },
+      {
+        category: "45 - 54 tahun",
+        value: 10140974
+      },
+      {
+        category: "10 - 19 tahun",
+        value: 13949159
+      }
+    ];
+    console.log(data);
+
+    // Set data
+    // https://www.amcharts.com/docs/v5/charts/percent-charts/pie-chart/#Setting_data
+    series.data.setAll(data);
+
+    series.appear(1000, 100);
+  }, [chartID]);
 
   return (
     <div id={data_modal} style={{tabindex}} class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
@@ -85,9 +82,7 @@ function Grafik1(props) {
             </div>
             <div class="p-6 space-y-6">              
             <div className="flex-container">
-              <div id={chartID}>
-                <HighchartsReact highcharts={Highcharts} options={options} />
-                </div>
+              <div id={chartID}></div>
               </div>
             </div>
             <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b">
@@ -108,4 +103,4 @@ const tabindex = styled.div`
 tabindex:-1;
 
 `;
-export default Grafik1;
+export default Grafik5;

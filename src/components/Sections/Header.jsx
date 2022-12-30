@@ -13,7 +13,7 @@ export default function Header() {
     <Wrapper id="home" className="container flexSpaceCenter">
       <LeftSide className="flexCenter">
         <div>
-          <h1 className="extraBold font60">Minat Baca berdasarkan data dari Perpustakaan di San Francisco</h1>
+          <h1 className="extraBold font60">Minat Baca Masyarakat berdasarkan data dari Perpustakaan di San Francisco</h1>
           <HeaderP className="font25 semiBold">
             San Francisco memiliki luas wilayah 121.4 KM&#xB2; dengan jumlah 25 perpustakaan.  Jika dibandingkan dengan jakarta yang memiliki luas hampir dari 3 kali San Francisco 
             hanya memilki 2 Perpustakaan Berstandar. 

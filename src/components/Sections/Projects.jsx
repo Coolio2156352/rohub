@@ -12,6 +12,10 @@ import ProjectImg5 from "../../assets/img/projects/5.png";
 import ProjectImg6 from "../../assets/img/projects/6.png";
 import AddImage2 from "../../assets/img/add/add2.png";
 import Grafik1 from '../Elements/Grafik1'
+import Grafik2 from "../Elements/Grafik2";
+import Grafik3 from "../Elements/Grafik3";
+import Grafik4 from "../Elements/Grafik4";
+import Grafik5 from "../Elements/Grafik5";
 import {Link} from "react-scroll"
 
 export default function Projects() {
@@ -23,7 +27,6 @@ export default function Projects() {
             <h1 className="font40 extraBold">Analisis Berdasarkan Grafik📈</h1>
             <p className="font13">
               Berdasarkan data Perpustakaan di San Fransico yang bersumber dari <a className="semiBold font15 purpleColor"  href="https://www.kaggle.com/datasets/datasf/sf-library-usage-data">Kaggle</a>.
-              <br />
               Berikut analisa kami berdasarkan data.
             </p>
           </HeaderInfo>
@@ -32,7 +35,10 @@ export default function Projects() {
               <ProjectBox
                 img={ProjectImg1}
                 title="Kategori Pelanggan Pustaka berdasarkan jumlah buku yang dipinjam"
-                text="Berdasarkan data yang ada, perlunya edukasi lebih dalam lagi tentang minat baca ke segala umur terutama kategori juvenile yaitu kategori remaja karena literasi itu sangatlah penting untuk para remaja saat dalam proses masa pertumbuhannya."
+                text="Berdasarkan data yang ada, perlunya edukasi lebih dalam lagi tentang minat baca 
+                ke segala umur terutama kategori juvenile yaitu 
+                kategori remaja karena literasi itu sangatlah penting 
+                untuk para remaja saat dalam proses masa pertumbuhannya."
                 data_modal="staticModal1"
               />
                 <Grafik1 chartID="grafik1" data_modal="staticModal1"/>          
@@ -41,17 +47,23 @@ export default function Projects() {
               <ProjectBox
                 img={ProjectImg2}
                 title="Banyaknya Jumlah Buku yang dipinjam berdasarkan tahun"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                action={() => alert("clicked")}
+                text="Berdasarkan data yang ada, perlunya mempertahankan atau bahkan meningkatkan
+                kembali minat baca masyarakat agar literasi pada masyarakat itu tidak pudar pada
+                tahun tahun berikutnya."
+                data_modal="staticModal2"
               />
+              <Grafik2 chartID="grafik2" data_modal="staticModal2"/>   
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg3}
                 title="Banyaknya Jumlah buku yang dipinjam berdasarkan lokasi"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                action={() => alert("clicked")}
+                text="Berdasarkan data yang ada, perlunya peningkatan kualitas sarana dan prasarana
+                dari berbagai lokasi perpustakaan yang ada agar membuat masyarakat nyaman
+                dalam membaca dan meminjam buku"
+                data_modal="staticModal3"
               />
+              <Grafik3 chartID="grafik3" data_modal="staticModal3"/>
             </div>
           </div>
           <div className="row textCenter">
@@ -59,53 +71,31 @@ export default function Projects() {
               <ProjectBox
                 img={ProjectImg4}
                 title="Banyaknya jumlah buku peminjam berdasarkan asal daerah pelanggan"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                action={() => alert("clicked")}
-              />
+                text="Perlunya peningkatan terhadap sarana dan prasarana agar perpustakaan lebih
+                banyak lagi dikunjungi para warga asing."
+                data_modal="staticModal4"
+              />              
+              <Grafik4 chartID="grafik4" data_modal="staticModal4" />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg5}
                 title="Top 3 rentang umur peminjam terbanyak berdasarkan jumlah buku yang dipinjam"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                action={() => alert("clicked")}
+                text="Perlunya edukasi dari orang tua tentang literasi buku sejak dini karena sangat
+                penting untuk kehidupan dalam segala bidang."
+                data_modal="staticModal5"
               />
+              <Grafik5 chartID="grafik5" data_modal="staticModal5"/>
             </div>
           </div>
           <div className="row flexCenter">
             <div style={{ margin: "50px 0", width: "200px" }}>
-              <FullButton title="Load More" action={() => alert("clicked")} />
             </div>
           </div>
         </div>
       </div>
       <div className="lightBg">
         <div className="container">
-          <Advertising className="flexSpaceCenter">
-            <AddLeft>
-              <AddLeftInner>
-                <ImgWrapper className="flexCenter">
-                  <img className="radius8" src={AddImage2} alt="add" />
-                </ImgWrapper>
-              </AddLeftInner>
-            </AddLeft>
-            <AddRight>
-              <h4 className="font15 semiBold">A few words about company</h4>
-              <h2 className="font40 extraBold">A Study of Creativity</h2>
-              <p className="font12">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              </p>
-              <ButtonsRow className="flexNullCenter" style={{ margin: "30px 0" }}>
-                <div style={{ width: "190px" }}>
-                  <FullButton title="Get Started" action={() => alert("clicked")} />
-                </div>
-                <div style={{ width: "190px", marginLeft: "15px" }}>
-                  <FullButton title="Contact Us" action={() => alert("clicked")} border />
-                </div>
-              </ButtonsRow>
-            </AddRight>
-          </Advertising>
         </div>
       </div>
     </Wrapper>
